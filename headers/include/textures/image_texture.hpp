@@ -1,6 +1,7 @@
 #ifndef IMAGE_TEXTURE_HPP
 #define IMAGE_TEXTURE_HPP
 
+#include "../common.hpp"
 #include "texture.hpp"
 #include "v_stb_image.h"
 

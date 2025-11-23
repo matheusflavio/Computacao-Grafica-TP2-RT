@@ -2,6 +2,7 @@
 #define CAMERA_HPP
 #include "common.hpp"
 #include "vec3.hpp"
+#include "ray.hpp"
 
 class Camera {
     private:

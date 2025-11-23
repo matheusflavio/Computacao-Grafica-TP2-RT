@@ -3,6 +3,7 @@
 
 #include "vec2.hpp"
 #include <cstdlib>
+#include <limits>
 #include <vector>
 #include <cstring>
 #include <sstream>
@@ -35,6 +36,13 @@ inline vector <string> split(string text){
         result.push_back(word);
     }
     return result;
+}
+
+// Limita um valor entre um mínimo e máximo
+inline double clamp(double x, double min, double max) {
+    if (x < min) return min;
+    if (x > max) return max;
+    return x;
 }
 
 #endif // !COMMON_HPP

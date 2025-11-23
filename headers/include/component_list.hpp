@@ -29,7 +29,8 @@ class ComponentList {
         bool hit(const Ray& r, double tMin, double tmaX, HitRecord& rec, bool reflected) const;
 };
 
-bool ComponentList::hit(const Ray& r, double tMin, double tMax, HitRecord& rec, bool reflected) const {
+// Verifica se o raio atinge algum objeto na lista
+inline bool ComponentList::hit(const Ray& r, double tMin, double tMax, HitRecord& rec, bool reflected) const {
     HitRecord tempRecord;
     bool hitAnything = false;
     double closest = tMax;

@@ -2,7 +2,9 @@
 #define LIGHT_MATERIAL_HPP
 
 #include "common.hpp"
-
+#include "ray.hpp"
+#include "material.hpp"
+#include "../objects/hittable.hpp"
 
 class LightMaterial : public Material {
     public:

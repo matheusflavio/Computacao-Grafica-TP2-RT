@@ -1,24 +1,28 @@
-#Files that will be compiled
+# Arquivos que serão compilados
 OBJS = main.cpp src/*.cpp
 
-#Used compiler
+# Compilador utilizado
 CC = g++
 
-#Path to aditional files needed to compile
+# Caminhos para arquivos de cabeçalho necessários para compilação
 INCLUDE_PATHS = -I headers/include/ -I headers/include/textures/ -I /opt/local/include/ -I headers/include/objects/ -I headers/include/materials/ -I headers/include/vectors/
 
-#Path to libraries needed to compile
+# Caminhos para bibliotecas necessárias para compilação
 LIBRARY_PATHS = 
 
-#Aditional compile options
+# Opções adicionais de compilação
 COMPILER_FLAGS = 
 
-#Specifies which libraries we're linking
+# Especifica as bibliotecas que estamos linkando
 LINKER_FLAGS = 
 
-#Executable name
+# Nome do executável
 EXE_NAME = demo.o
 
-#This is the target that compiles our executable
+# Este é o alvo que compila o executável
 all : $(OBJS)
 	$(CC) $(OBJS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -std=c++17 -o $(EXE_NAME)
+
+# Limpa arquivos compilados
+clean:
+	rm -f $(EXE_NAME)
