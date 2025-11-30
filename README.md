@@ -7,16 +7,20 @@ Este projeto implementa um **algoritmo de Ray Tracing Distribuído** desenvolvid
 ## Observação sobre os exemplos:
 Para compilar os exemplos de renderização, foi solicitado ao ChatGPT para utilizar o modelo de input fornecido na especificação do TP para criar outros exemplos que respeitam as  regras de input para testar a implementação. Assim sendo, foram criados mais 7 novos inputs na pasta "inputs", havendo um total de 8 inputs ao contar com o input de exemplo da especificação.
 
-A compilação do código e execução completa de todos os exemplos no meu notebook (Intel Core I5 6200U, 8GB de RAM DDR3) deu-se em 
+## Hardware
+A compilação do código e execução completa de todos os exemplos no meu notebook (Intel Core I5 6200U, 8GB de RAM DDR3, Zorin OS) deu-se em 
+./iterateAllInputs.sh  2357,36s user 597,89s system 383% cpu 12:50,77 total
 
-A compilação do código e execução completa de todos os exemplos no computador mucuri do DCC deu-se em 
+A compilação do código e execução completa de todos so exemplos no meu computador (Ryzen 5 5600, 32GB de RAM DDR4, Windows 11 com WSL Ubuntu) deu-se em
+
+Apesar do hardware dedicado para RayTracing no computador (RTX 2060), foi optado pela implementação geral com processamento pelo processador a fim de manter maior compatibilidade com vários dispositivos e sistemas.
 
 ## Compilação e Execução
 
 ### Requisitos
 
 - Compilador C++ com suporte a C++17 (g++ ou clang++)
-- Sistema Linux/Unix
+- Sistema Linux/Unix ou WSL equivalente
 
 ### Compilar
 
@@ -54,7 +58,7 @@ make
 
 #### iterateAllInputs.sh
 
-Script que renderiza automaticamente todos os arquivos de entrada da pasta `inputs/` e converte as imagens PPM para PNG usando ffmpeg:
+Script que compila o código referente à implementação do projeto, renderiza automaticamente todos os arquivos de entrada da pasta `inputs/` e converte as imagens PPM para PNG usando ffmpeg:
 
 ```bash
 chmod +x iterateAllInputs.sh
@@ -248,7 +252,7 @@ Similar à reflexão imperfeita, mas para materiais transparentes.
 ## Otimização de Desempenho
 
 ### Amostras por Pixel
-O parâmetro `amostras_por_pixel` controla o equilíbrio entre qualidade e tempo de renderização:
+O parâmetro `amostras_por_pixel` controla o equilíbrio entre qualidade e tempo de renderização (tempo levando em conta a renderização no meu [Notebook][#hardware]):
 
 - **5-10 amostras**: Renderização rápida para testes (~segundos)
 - **50-100 amostras**: Qualidade intermediária (~minutos)
@@ -262,6 +266,7 @@ O renderizador utiliza threads automáticas para dividir o trabalho de renderiza
 - Formato de saída PPM (pode ser convertido para PNG/JPEG com ffmpeg para visualização mais amigável)
 - Renderização pode ser demorada em alta qualidade
 - Não suporta iluminação global completa (path tracing)
+- Não foi implementada renderização diretamente em hardware gráfico (GPUs)
 
 ## Referências
 
