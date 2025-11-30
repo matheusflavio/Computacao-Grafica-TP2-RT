@@ -2,7 +2,14 @@
 
 ## Visão Geral
 
-Este projeto implementa um **algoritmo de Ray Tracing Distribuído** desenvolvido como Trabalho Prático 3 da disciplina de Computação Gráfica da UFMG. O renderizador é capaz de gerar imagens fotorealísticas através de simulação física de raios de luz, suportando reflexão, refração, sombras suaves e diversos efeitos visuais avançados.
+Este projeto implementa um **algoritmo de Ray Tracing Distribuído** desenvolvido como Trabalho Prático 2 da disciplina de Computação Gráfica da UFMG. O renderizador é capaz de gerar imagens fotorealísticas através de simulação física de raios de luz, suportando reflexão, refração, sombras suaves e diversos efeitos visuais avançados.
+
+## Observação sobre os exemplos:
+Para compilar os exemplos de renderização, foi solicitado ao ChatGPT para utilizar o modelo de input fornecido na especificação do TP para criar outros exemplos que respeitam as  regras de input para testar a implementação. Assim sendo, foram criados mais 7 novos inputs na pasta "inputs", havendo um total de 8 inputs ao contar com o input de exemplo da especificação.
+
+A compilação do código e execução completa de todos os exemplos no meu notebook (Intel Core I5 6200U, 8GB de RAM DDR3) deu-se em 
+
+A compilação do código e execução completa de todos os exemplos no computador mucuri do DCC deu-se em 
 
 ## Compilação e Execução
 
@@ -20,7 +27,7 @@ make
 ### Executar
 
 ```bash
-./demo.o <arquivo_entrada> <arquivo_saida> [largura] [altura] [amostras_por_pixel]
+./demo <arquivo_entrada> <arquivo_saida> [largura] [altura] [amostras_por_pixel]
 ```
 
 **Parâmetros:**
@@ -34,13 +41,13 @@ make
 
 ```bash
 # Renderização rápida (baixa qualidade)
-./demo.o inputs/input1.txt output.ppm 400 300 5
+./demo inputs/input1.txt output.ppm 400 300 5
 
 # Renderização de alta qualidade
-./demo.o inputs/input1.txt output.ppm 1920 1080 200
+./demo inputs/input1.txt output.ppm 1920 1080 200
 
 # Usar configurações padrão
-./demo.o inputs/input_focused.txt resultado.ppm
+./demo inputs/input_focused.txt resultado.ppm
 ```
 
 ### Scripts Auxiliares

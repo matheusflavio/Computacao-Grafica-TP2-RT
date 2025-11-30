@@ -17,7 +17,7 @@ COMPILER_FLAGS =
 LINKER_FLAGS = 
 
 # Nome do executável
-EXE_NAME = demo.o
+EXE_NAME = demo
 
 # Este é o alvo que compila o executável
 all : $(OBJS)

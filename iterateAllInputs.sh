@@ -1,4 +1,4 @@
-rm demo.o
+rm demo
 
 rm -rf exec_out images_out
 
@@ -11,6 +11,6 @@ for inputfile in ./inputs/*.*; do
     outputfile="${nameFile%.*}"             # Remove a extensão do nome do arquivo
 
     # Chama o programa com o nome do arquivo de saída sem a extensão
-    ./demo.o "$inputfile" "./exec_out/$outputfile"
+    ./demo "$inputfile" "./exec_out/$outputfile"
     ffmpeg -i "./exec_out/$outputfile.ppm" "./images_out/${nameFile%.*}.png"
 done
